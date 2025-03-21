@@ -1,36 +1,145 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Google Tasks Clone
 
-## Getting Started
+Полноценная копия приложения Google Tasks с функциональным бэкендом, синхронизацией между устройствами и точным повторением дизайна оригинального приложения.
 
-First, run the development server:
+## Основные возможности
+
+- ✓ Создание и управление задачами
+- ✓ Умные списки задач с подсчетом количества
+- ✓ Отметка важных задач звездочкой
+- ✓ Группировка по спискам с возможностью создания новых
+- ✓ Управление выполненными задачами
+- ✓ Сортировка и дополнительные действия с задачами
+- ✓ Анимации и визуальные эффекты (Ripple Effect, частицы при выполнении)
+- ✓ Умное форматирование дат (сегодня, завтра, X дней назад)
+- ✓ Адаптивный дизайн
+- ✓ Поддержка русского языка
+
+## Технологии
+
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Lucide Icons
+- React Hooks
+
+## Установка и запуск
+
+```bash
+# Клонирование репозитория
+git clone
+```
+
+# Установка зависимостей
+
+```bash
+npm install
+```
+
+# или
+
+```bash
+yarn install
+```
+
+# или
+
+```bash
+bun install
+```
+
+# Запуск сервера разработки
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# или
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# или
 
-## Learn More
+```bash
+bun dev
 
-To learn more about Next.js, take a look at the following resources:
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Откройте [http://localhost:3000](http://localhost:3000) в вашем браузере для просмотра приложения.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Структура проекта
 
-## Deploy on Vercel
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+google-tasks/
+├── app/ # Next.js App Router
+│ ├── (main)/ # Основной макет
+│ ├── globals.css # Глобальные стили
+│ └── layout.tsx # Корневой макет
+├── components/
+│ ├── features/
+│ │ └── avatar.tsx # Компонент аватара пользователя
+│ ├── layout/ # Компоненты макета
+│ │ ├── AddTask.tsx # Кнопка добавления задачи
+│ │ ├── ComplitedTodo.tsx # Выполненные задачи
+│ │ ├── Header.tsx # Заголовок приложения
+│ │ ├── Navigation.tsx # Навигация по спискам
+│ │ └── Todo.tsx # Основной компонент задач
+│ └── ui/ # UI компоненты
+│ └── RippleEffect.tsx # Эффект волны при клике
+├── public/ # Статические ресурсы
+│ ├── add.svg
+│ ├── arrow.svg
+│ ├── more-vert.svg
+│ ├── star-filled.svg
+│ └── swap-vert.svg
+└── package.json
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+
+## Особенности реализации
+
+### Управление состоянием
+
+- Использование React useState для локального состояния
+- Эффективное управление списками задач
+- Оптимизированные ререндеры компонентов
+
+### Пользовательский опыт
+
+- Плавные анимации с использованием Framer Motion
+- Интуитивный интерфейс в стиле Google
+- Визуальная обратная связь при всех действиях
+- Кастомные эффекты при выполнении задач
+
+### Дизайн
+
+- Точное соответствие оригинальному приложению Google Tasks
+- Современный минималистичный интерфейс
+- Тёмная тема по умолчанию
+- Адаптивная вёрстка
+
+### Производительность
+
+- Оптимизированные изображения и иконки
+- Эффективное управление ререндерами
+- Быстрая загрузка и отзывчивый интерфейс
+
+## Планы по развитию
+
+- [ ] Добавление авторизации
+- [ ] Интеграция с Google аккаунтом
+- [ ] Синхронизация с Google Calendar
+- [ ] Подзадачи
+- [ ] Уведомления
+- [ ] Экспорт/импорт задач
+- [ ] Поддержка дополнительных языков
+
+## Лицензия
+
+```
+
+```

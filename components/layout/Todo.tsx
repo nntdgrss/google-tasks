@@ -11,7 +11,7 @@ const mockTodoData = [
     title: "Задача 1",
     description: "Описание задачи 1",
     stared: false,
-    date: "2025-03-21",
+    date: "2025-04-21",
   },
   {
     id: 2,
