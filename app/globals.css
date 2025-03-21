@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
 @import "tailwindcss";
 
 :root {
@@ -7,14 +9,12 @@
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-foreground: var(--e8eaed);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #1f2020;
     --foreground: #ededed;
   }
 }
@@ -22,5 +22,96 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.nav-indicator {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: left;
+  will-change: transform, width;
+}
+
+.nav-item {
+  transition: color 0.3s ease;
+}
+
+@keyframes expand {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.5);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.nav-indicator {
+  animation: expand 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes particle {
+  0% {
+    transform: translate(0, 0) rotate(var(--angle));
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) rotate(var(--angle));
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 10px;
+  height: 2.5px;
+  pointer-events: none;
+  transform-origin: center;
+  animation: particle 0.3s ease-out forwards;
+}
+
+.particle:nth-child(1) {
+  --tx: 25px;
+  --ty: 0px;
+  --angle: 0deg;
+  background: #4285f4;
+}
+
+.particle:nth-child(2) {
+  --tx: 12.5px;
+  --ty: 22px;
+  --angle: 60deg;
+  background: #ea4335;
+}
+
+.particle:nth-child(3) {
+  --tx: -12.5px;
+  --ty: 22px;
+  --angle: 120deg;
+  background: #fbbc05;
+}
+
+.particle:nth-child(4) {
+  --tx: -25px;
+  --ty: 0px;
+  --angle: 180deg;
+  background: #34a853;
+}
+
+.particle:nth-child(5) {
+  --tx: -12.5px;
+  --ty: -22px;
+  --angle: 240deg;
+  background: #4285f4;
+  opacity: 0.8;
+}
+
+.particle:nth-child(6) {
+  --tx: 12.5px;
+  --ty: -22px;
+  --angle: 300deg;
+  background: #ea4335;
+  opacity: 0.8;
 }
