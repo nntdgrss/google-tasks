@@ -78,7 +78,7 @@ export default function Todo() {
       // Удаляем задачу из списка после анимации затухания
       setTimeout(() => {
         setTodoData((prev) => prev.filter((todo) => todo.id !== id));
-      }, 300);
+      }, 100);
     }
   };
 
